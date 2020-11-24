@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-ReactDom.render(
-    <div>
-        <h2>Top Front-end frameworks</h2>
-        <ul>
-            <li>React</li>
-            <li>Angular</li>
-            <li>Vue</li>
-        </ul>
-    </div>,
- document.getElementById("root"));
+//Functional component
+function MyList() {
+    return (
+        <div>
+            <h2>Top Front-End frameworks</h2>
+            <ul>
+                <li>React</li>
+                <li>Angular</li>
+                <li>Vue</li>
+            </ul>
+        </div>
+    )
+}
+
+
+ReactDom.render(< MyList/>,document.getElementById("root"));
