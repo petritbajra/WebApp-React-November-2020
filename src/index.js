@@ -12,8 +12,23 @@ function MyList() {
                 <li>Vue</li>
             </ul>
         </div>
+
+    )
+}
+
+function MyExercise() {
+    return (
+        <div>
+            <h1>Petrit Bajra</h1>
+            <h3>Istog</h3>
+            <ul>
+                <li>JavaScript</li>
+                <li>Vue</li>
+                <li>React</li>
+            </ul>
+        </div>
     )
 }
 
 
-ReactDom.render(< MyList/>,document.getElementById("root"));
+ReactDom.render(< MyExercise/>,document.getElementById("root"));
