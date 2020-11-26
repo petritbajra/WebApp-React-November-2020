@@ -1,16 +1,14 @@
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
-
-
-
-
+const saySomething = name => `Welcome to my page, ${name}`
 function App() {
+        const firstName = 'John'
+        const lastName = 'Smith'
+        const date = new Date()
+
     return (
         <div>
-            <Header />
-            <Main />
-            <Footer />
+           <h1>Hi {`${firstName} ${lastName}`} {2 + 2} {date.getHours()}</h1>
+           <h2>{saySomething(firstName)}</h2>
+           <h2>{3 + 3}</h2>
         </div>
     )
 }
