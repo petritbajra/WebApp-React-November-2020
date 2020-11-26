@@ -1,15 +1,20 @@
-const saySomething = name => `Welcome to my page, ${name}`
-function App() {
-        const firstName = 'John'
-        const lastName = 'Smith'
-        const date = new Date()
 
+function App() {
+    const myStyle = {
+        color:"orange",
+        backgroundColor: "red",
+        fontSize: "25px" // nese e vendosim veq 25 apet e mer px
+    }
     return (
         <div>
-           <h1>Hi {`${firstName} ${lastName}`} {2 + 2} {date.getHours()}</h1>
-           <h2>{saySomething(firstName)}</h2>
-           <h2>{3 + 3}</h2>
+        <div style={myStyle}>
+            <h1>Hello</h1>
         </div>
+        <div style={myStyle}>
+                <h1>Hello</h1>
+        </div>
+        </div>
+        
     )
 }
 
