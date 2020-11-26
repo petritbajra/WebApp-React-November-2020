@@ -1,0 +1,12 @@
+.header {
+    border-bottom: 1px solid blue;
+    color: green;
+}
+
+.header h2 {
+        margin-bottom: 5px;
+}
+
+main p {
+    color: brown;
+}
