@@ -4,14 +4,8 @@ import employess from "../employees"
 
 
 function EmployeeList() {
-    const emp = [];
-    for (let i = 0; i < employess.length; i++) {
-        emp.push(<Employee data={employess[i]}/>);
-    }
-
-    return (
-    <div>{emp}</div>
-    )
+    const emp = employess.map(x => <Employee data={x} />);
+return <div>{emp}</div>;
 }
 
 export default EmployeeList;
