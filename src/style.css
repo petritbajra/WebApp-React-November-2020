@@ -1,0 +1,22 @@
+.employee img {
+    width: 200px;
+    float: left;
+}
+
+.employee-info {
+    padding-top: 1px;
+    margin-left: 20px;
+    float: left;
+
+}
+
+.employee {
+    padding-top: 10px;
+    height:220px ;
+    width: 100%;
+    clear: both;
+}
+
+.employee hr {
+    clear: both;
+}
