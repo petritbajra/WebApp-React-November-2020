@@ -8,13 +8,16 @@ class App extends React.Component {
         }
         this.handleClick = this.handleClick.bind(this);
     }
-
     handleClick({target: {name}}) {
         this.setState(prevState => {
             return {
                 count: prevState.count + (name === 'decrement' ? -1 : 1)
             }
         });
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('Componenet update.');
     }
 
     render() {
