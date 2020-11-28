@@ -5,26 +5,33 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            firstName: "Something else"
+            loggedIn: false
         };
+        this.handelClick = this.handelClick.bind(this);
     }
 
-    returnRandomStuff() {
-        return 2 * 25;
-        }
+    handelClick() {
+        this.setState(prevState => {
+            return {
+                loggedIn: !prevState.loggedIn
+            }
+        });
+    }
 
     render() {
-        console.log(this.state.firstName);
-        console.log(this.returnRandomStuff());
+        console.log(this.state.loggedIn);
+        // console.log(this.state.firstName);
+        // console.log(this.returnRandomStuff());
       return (
             <div>
+                <h1>
+                    {this.state.loggedIn ? 'User is logged in.' : 'User is logged out'}
+                </h1>
                <button
-                    onClick={() =>{
-                        console.log('Hello');
-                    }}
-                    onMouseOver={() => {
-                        console.log('Mouse over');
-                    }}
+                    onClick={this.handelClick}
+                    // onMouseOver={() => {
+                    //     console.log('Mouse over');
+                    // }}
                >
                    Press Me
                </button>
