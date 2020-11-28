@@ -18,9 +18,16 @@ class App extends React.Component {
         console.log(this.returnRandomStuff());
       return (
             <div>
-                <h1>HR App</h1>
-                <hr />
-                <EmployeeList />
+               <button
+                    onClick={() =>{
+                        console.log('Hello');
+                    }}
+                    onMouseOver={() => {
+                        console.log('Mouse over');
+                    }}
+               >
+                   Press Me
+               </button>
             </div>
         )
     }
