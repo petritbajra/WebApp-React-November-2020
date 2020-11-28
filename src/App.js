@@ -1,4 +1,5 @@
 import React from "react";
+import ChildComponent from "./components/ChildComponent"
 class App extends React.Component {
     constructor() {
         super();
@@ -22,6 +23,8 @@ class App extends React.Component {
                 <h1>{this.state.count}</h1>
                 <button name="decrement" onClick={this.handleClick }>Decrement</button>
                 <button mame="increment" onClick={this.handleClick}>Increment</button>
+                {this.state.count === 11 && <ChildComponent /> }
+                
             </div>
         )
     }
