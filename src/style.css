@@ -1,22 +1,9 @@
-.employee img {
+.center {
+    margin: 0 auto;
     width: 200px;
-    float: left;
+    text-align: center;
 }
 
-.employee-info {
-    padding-top: 1px;
-    margin-left: 20px;
-    float: left;
-
-}
-
-.employee {
-    padding-top: 10px;
-    height:220px ;
-    width: 100%;
-    clear: both;
-}
-
-.employee hr {
-    clear: both;
+.center h1 {
+    font-size: 80px;
 }

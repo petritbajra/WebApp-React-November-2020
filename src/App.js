@@ -1,40 +1,27 @@
 import React from "react";
-import EmployeeList from "./components/EmployeeList";
-
 class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            loggedIn: false
-        };
-        this.handelClick = this.handelClick.bind(this);
+            count: 10
+        }
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    handelClick() {
+    handleClick({target: {name}}) {
         this.setState(prevState => {
             return {
-                loggedIn: !prevState.loggedIn
+                count: prevState.count + (name === 'decrement' ? -1 : 1)
             }
         });
     }
 
     render() {
-        console.log(this.state.loggedIn);
-        // console.log(this.state.firstName);
-        // console.log(this.returnRandomStuff());
-      return (
-            <div>
-                <h1>
-                    {this.state.loggedIn ? 'User is logged in.' : 'User is logged out'}
-                </h1>
-               <button
-                    onClick={this.handelClick}
-                    // onMouseOver={() => {
-                    //     console.log('Mouse over');
-                    // }}
-               >
-                   Press Me
-               </button>
+        return (
+            <div className="center">
+                <h1>{this.state.count}</h1>
+                <button name="decrement" onClick={this.handleClick }>Decrement</button>
+                <button mame="increment" onClick={this.handleClick}>Increment</button>
             </div>
         )
     }
