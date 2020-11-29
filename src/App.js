@@ -3,7 +3,8 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            users: []
+            users: [],
+            isLoading: true
         }
     }
 
@@ -16,22 +17,21 @@ class App extends React.Component {
                     'Angela',
                     'Lisa',
                     'Bob'
-                ]
+                ],
+                isLoading: false
             });
             
         }, 2000);
     }
 
     render() {
-    const lis = this.state.users.map((e, i) => <li key={i}>{e}</li>);
-    
         return (
             <div>
-                {this.state.users.length ? (
+                {!this.state.isLoading ? (
                     <div>
                         List of users
                         <ul>
-                            {lis}
+                        {this.state.users.map((e, i) => <li key={i}>{e}</li>)}
                         </ul>
                     </div>
                 ) : <h3>Loading...</h3> }
