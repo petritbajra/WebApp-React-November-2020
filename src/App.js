@@ -7,9 +7,13 @@ class App extends React.Component {
        users: [],
        isLoading: true,
        form: {
-         name: 'Default'
+         name: '',
+         email: '',
+         phone: '',
+         website: ''
        }
      }
+     this.handleChange = this.handleChange.bind(this);
   }
 
 
@@ -31,6 +35,20 @@ class App extends React.Component {
         alert('Could not fetch users.');
       });
     }
+
+
+    handleChange(event) {
+      const name = event.target.name;
+          this.setState({
+              form: {
+                ...this.state.form,
+                [name]: event.target.value
+              }
+          });
+    }
+
+
+
     render() { 
       if (this.state.isLoading) {
         return <h1>Loading...</h1>
@@ -39,7 +57,6 @@ class App extends React.Component {
       const users = this.state.users.map((e, i) => {
         return (<tr key={i}>
                 <td>{e.name}</td>
-                <td>{e.username}</td>
                 <td>{e.email}</td>
                 <td>{e.phone}</td>
                 <td>{e.website}</td>
@@ -58,24 +75,50 @@ class App extends React.Component {
                         type="text"
                         id="name"
                         name="name"
-                        // value={this.state.form.name}
-                        onChange={event => {
-                          this.setState({
-                            form:{
-                              name: event.target.value
-                            }
-                          });
-                        }}
-                        
+                        value={this.state.form.name}
+                        onChange={this.handleChange}
                         />
                   </div>
+
+                  <div>
+                    <label htmlFor="email">Email: </label>
+                    <input
+                        type="text"
+                        id="email"
+                        name="email"
+                        value={this.state.form.email}
+                        onChange={this.handleChange}
+                        />
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone">Phone: </label>
+                    <input
+                        type="text"
+                        id="phone"  
+                        name="phone"
+                        value={this.state.form.phone}
+                        onChange={this.handleChange}
+                        />
+                  </div>
+
+                  <div>
+                    <label htmlFor="website">Website: </label>
+                    <input
+                        type="text"
+                        id="website"
+                        name="website"
+                        value={this.state.form.website}
+                        onChange={this.handleChange}
+                        />
+                  </div>
+                  <button type="submit">Submit</button>
               </form>
             <h2>List of Users</h2>
             <table>
               <thead>
                   <tr>
                     <th>Name</th>
-                    <th>Username</th>
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Website</th>
