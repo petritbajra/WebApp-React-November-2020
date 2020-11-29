@@ -5,7 +5,10 @@ class App extends React.Component {
      super(); 
      this.state = {
        users: [],
-       isLoading: true
+       isLoading: true,
+       form: {
+         name: 'Default'
+       }
      }
   }
 
@@ -47,6 +50,26 @@ class App extends React.Component {
 
         return (
           <div>
+              <form>
+                <h2>Create new user</h2>
+                  <div>
+                    <label htmlFor="name">First Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        // value={this.state.form.name}
+                        onChange={event => {
+                          this.setState({
+                            form:{
+                              name: event.target.value
+                            }
+                          });
+                        }}
+                        
+                        />
+                  </div>
+              </form>
             <h2>List of Users</h2>
             <table>
               <thead>
