@@ -24,18 +24,17 @@ class App extends React.Component {
 
     render() {
     const lis = this.state.users.map((e, i) => <li key={i}>{e}</li>);
-
-        if (!this.state.users.length) {
-            return <h3>Loading...</h3>
-        }
-
+    
         return (
             <div>
-
-                List of users
-                <ul>
-                    {lis}
-                </ul>
+                {this.state.users.length ? (
+                    <div>
+                        List of users
+                        <ul>
+                            {lis}
+                        </ul>
+                    </div>
+                ) : <h3>Loading...</h3> }
             </div>
         )
     }
