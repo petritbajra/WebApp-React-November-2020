@@ -14,6 +14,7 @@ class App extends React.Component {
        }
      }
      this.handleChange = this.handleChange.bind(this);
+     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
@@ -39,15 +40,28 @@ class App extends React.Component {
 
     handleChange(event) {
       const name = event.target.name;
-          this.setState({
+          this.setState(prevState => {
+            return {
               form: {
-                ...this.state.form,
+                ...prevState.form,
                 [name]: event.target.value
               }
+            }
           });
     }
 
-
+    handleSubmit(event) {
+      event.preventDefault();
+      this.setState(prevState => {
+        return {
+          users: [
+              prevState.form,
+              ...prevState.users
+          ]
+        }
+      })
+      
+    }
 
     render() { 
       if (this.state.isLoading) {
@@ -67,7 +81,7 @@ class App extends React.Component {
 
         return (
           <div>
-              <form>
+              <form onSubmit={this.handleSubmit}>
                 <h2>Create new user</h2>
                   <div>
                     <label htmlFor="name">First Name</label>
@@ -77,6 +91,7 @@ class App extends React.Component {
                         name="name"
                         value={this.state.form.name}
                         onChange={this.handleChange}
+                        required
                         />
                   </div>
 
@@ -88,6 +103,7 @@ class App extends React.Component {
                         name="email"
                         value={this.state.form.email}
                         onChange={this.handleChange}
+                        required
                         />
                   </div>
 
@@ -99,6 +115,7 @@ class App extends React.Component {
                         name="phone"
                         value={this.state.form.phone}
                         onChange={this.handleChange}
+                        required
                         />
                   </div>
 
@@ -110,6 +127,7 @@ class App extends React.Component {
                         name="website"
                         value={this.state.form.website}
                         onChange={this.handleChange}
+                        required
                         />
                   </div>
                   <button type="submit">Submit</button>
