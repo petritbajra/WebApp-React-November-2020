@@ -57,7 +57,13 @@ class App extends React.Component {
           users: [
               prevState.form,
               ...prevState.users
-          ]
+          ],
+          form: {
+            name: '',
+            email: '',
+            phone: '',
+            website: ''
+          }
         }
       })
       
@@ -91,6 +97,7 @@ class App extends React.Component {
                         name="name"
                         value={this.state.form.name}
                         onChange={this.handleChange}
+                        placeholder="John Smith"
                         required
                         />
                   </div>
@@ -103,6 +110,7 @@ class App extends React.Component {
                         name="email"
                         value={this.state.form.email}
                         onChange={this.handleChange}
+                        placeholder="john.smith@gmail.com"
                         required
                         />
                   </div>
@@ -115,6 +123,7 @@ class App extends React.Component {
                         name="phone"
                         value={this.state.form.phone}
                         onChange={this.handleChange}
+                        placeholder="1-463-123"
                         required
                         />
                   </div>
@@ -127,6 +136,7 @@ class App extends React.Component {
                         name="website"
                         value={this.state.form.website}
                         onChange={this.handleChange}
+                        placeholder="www.google.com"
                         required
                         />
                   </div>
